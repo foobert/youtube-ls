@@ -11,4 +11,13 @@ install:
 - cargo install cross
 
 script:
-- cross build --target=armv7-unknown-linux-gnueabihf
+- cross build --target=armv7-unknown-linux-gnueabihf --release
+- ls -lR target
+
+deploy:
+  provider: releases
+  api_key:
+    secure: f2ewI0xkhYoGiq6uskejeKBN2ATUAG2Omoxe0JtvzDe6w8GbHWKsqnT+p3hZjAwJGO78KcvJY0dRFeDzp3ryvK9Ovrotr0P0CFFiZrIJD5532GMjv6V36e2arcdW/b3byWZvGdKsbXJ5AXaPHPKuK3WxADRaX4TLJ9GaqLl1qkOAwY1Lm7MU1IICXA86vI4v/uTLMg9NCtyGr54GqNXzi/zYRO4klE8a3Ga/9NiO2RNymrSwoP+NsuVskR5TXHR2weSRhUhMBXjzZY3im00TdzKFTlRdWH06i1xGkjCuJhEMpU/pLF9tGraM0awAHrYUNHqzL9hsHRbaY1w0mmkWMNzxDdSVEmi4lSmq7zfeetpB0Mc1X08svRZveOy6l4ScU7Aj2UTkOpQVdmKnoXlezWHdBrQVVt2Bp92rWcbbGUjGT7y/0/FGY08wcvBxFEkw9Zigubh/UDwC5Vkr7iujoS4DoPfsj6TihD90oSioxbWn85PUGvvyNikz21OWNXE9FOfJMC/ZVa/eTyMm0aa9TYmY5UP1ZhrfYCgM0i2XTqrkmEOnSrDcYNf1Ew2KGTRIC9o50pgNxeqaO2yya6UEjR0aXeqWme+GM/tRyRwGQ2mq6TqlAagHXr2CDg9+Ld/A0RpP1thAqTno8FUGrd2wODvwVM8LEJni6JPl7xAZo/o=
+  file: 'target/armv7-unknown-linux-gnueabihf/release/youtube-ls'
+  on:
+    tags: true
