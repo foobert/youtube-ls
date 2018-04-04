@@ -14,7 +14,7 @@ script:
 - cross build --target=armv7-unknown-linux-gnueabihf --release
 
 before_deploy:
-- tar cfvz release.tar.gz target/**/release/youtube-dl
+- tar cfvz release.tar.gz target/*/release/youtube-dl
 
 deploy:
   provider: releases
