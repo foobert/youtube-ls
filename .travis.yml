@@ -1,0 +1,13 @@
+sudo: required
+
+services:
+- docker
+
+language: generic
+
+install:
+- curl https://sh.rustup.rs -sSf | sh -s -- -y
+- $HOME/.cargo/bin/cargo install cross
+
+script:
+- cross build --target=armv7-unknown-linux-gnueabihf
