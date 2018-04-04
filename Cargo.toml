@@ -1,0 +1,9 @@
+[package]
+name = "youtube-ls"
+version = "0.1.0"
+authors = ["foobert <0x002a@gmail.com>"]
+
+[dependencies]
+reqwest = "*"
+select = "*"
+regex = "*"
