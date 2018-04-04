@@ -12,7 +12,6 @@ install:
 
 script:
 - cross build --target=armv7-unknown-linux-gnueabihf --release
-- ls -lR target
 
 deploy:
   provider: releases
