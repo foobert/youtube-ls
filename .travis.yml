@@ -12,7 +12,8 @@ install:
 
 script:
 - cross build --target=armv7-unknown-linux-gnueabihf --release
-- tar cfvz release.tar.gz target/armv7-unknown-linux-gnueabihf/release/youtube-ls
+- cross build --target=arm-unknown-linux-gnueabi --release
+- tar cfvz release.tar.gz target/*/release/youtube-ls
 
 deploy:
   provider: releases
