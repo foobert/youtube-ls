@@ -1,6 +1,7 @@
 extern crate regex;
 extern crate reqwest;
 extern crate select;
+extern crate openssl_probe;
 
 use std::env;
 use regex::Regex;
@@ -8,6 +9,8 @@ use select::document::Document;
 use select::predicate::{Class, Name, Predicate};
 
 fn main() {
+    openssl_probe::init_ssl_cert_env_vars();
+
     let args: Vec<String> = env::args().collect();
     assert!(args.len() > 1);
     let url = format!("https://www.youtube.com/user/{}/videos", &args[1]);

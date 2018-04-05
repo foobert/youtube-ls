@@ -7,3 +7,4 @@ authors = ["foobert <0x002a@gmail.com>"]
 reqwest = "*"
 select = "*"
 regex = "*"
+openssl-probe = "*"
