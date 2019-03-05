@@ -13,7 +13,7 @@ fn main() {
 
     let args: Vec<String> = env::args().collect();
     assert!(args.len() > 1);
-    let url = format!("https://www.youtube.com/user/{}/videos", &args[1]);
+    let url = format!("https://www.youtube.com/channel/{}/videos", &args[1]);
     let re = match args.len() {
         3 => Regex::new(&args[2]).unwrap(),
         _ => Regex::new("").unwrap(),
